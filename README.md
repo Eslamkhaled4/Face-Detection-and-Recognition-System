@@ -40,7 +40,7 @@ It solves the problem of manual identity verification and attendance tracking by
 |--------------|----------------|------------------|
 | **Eslam Hashish** | [github.com/eslamhashish](https://github.com/eslamhashish)  | Project planning, code integration, face recognition model implementation |
 | **Mohamed Ameer** | https://github.com/MHameer000 |  Dataset creation, preprocessing, feature extraction |
-| **[Member 3 Name]** | https://github.com/Abdelrahmanhani13 | Testing, UI design, documentation |
+| **Abdalrhman hani** | https://github.com/Abdelrahmanhani13 | Testing, UI design, documentation |
 
 ---
 
