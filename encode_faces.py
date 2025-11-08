@@ -2,12 +2,15 @@ import face_recognition
 import pickle
 import os
 
+# Get the directory where this script is located
+script_dir = os.path.dirname(os.path.abspath(__file__))
+
 # Dictionary to store encodings
 known_encodings = []
 known_names = []
 
-# Path to known faces
-known_faces_dir = "known_faces"
+# Path to known faces (relative to script location)
+known_faces_dir = os.path.join(script_dir, "known_faces")
 
 print("Encoding faces...")
 
@@ -36,8 +39,11 @@ for person_name in os.listdir(known_faces_dir):
             print(f"✗ No face found in {photo_path}")
 
 # Save encodings to file
+encodings_dir = os.path.join(script_dir, "encodings")
+os.makedirs(encodings_dir, exist_ok=True)  # Create directory if it doesn't exist
+encodings_path = os.path.join(encodings_dir, "encodings.pkl")
 data = {"encodings": known_encodings, "names": known_names}
-with open("encodings/encodings.pkl", "wb") as f:
+with open(encodings_path, "wb") as f:
     pickle.dump(data, f)
 
 print(f"\nDone! Encoded {len(known_encodings)} faces.")
