@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Recognition System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">Face Recognition System</div>
+            <ul class="nav-menu">
+                <li><a href="#" class="nav-link active" data-page="home">Home</a></li>
+                <li><a href="#" class="nav-link" data-page="recognition">Face Recognition</a></li>
+                <li><a href="#" class="nav-link" data-page="encode">Encode Faces</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Landing Page -->
+    <section id="home" class="page active">
+        <div class="container">
+            <div class="landing-card">
+                <h1 class="landing-title">Face Recognition System</h1>
+                <p class="landing-description">
+                    A real-time face detection and recognition system using AI and computer vision.
+                </p>
+                <div class="landing-buttons">
+                    <button class="btn btn-primary" onclick="showPage('recognition')">
+                        Start Face Recognition
+                    </button>
+                    <button class="btn btn-secondary" onclick="showPage('encode')">
+                        Encode New Faces
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Face Recognition Page -->
+    <section id="recognition" class="page">
+        <div class="container">
+            <h2 class="page-title">Face Recognition</h2>
+            
+            <div class="recognition-container">
+                <!-- Webcam Preview -->
+                <div class="webcam-wrapper">
+                    <video id="videoElement" class="webcam-video" autoplay playsinline></video>
+                    <canvas id="canvasElement" class="webcam-canvas"></canvas>
+                    <div id="loadingSpinner" class="spinner hidden"></div>
+                </div>
+
+                <!-- Status and Recognition Info -->
+                <div class="recognition-info">
+                    <div class="status-box">
+                        <p class="status-label">Status:</p>
+                        <p id="statusText" class="status-text">Camera Ready</p>
+                    </div>
+                    
+                    <div class="recognition-result">
+                        <p class="result-label">Recognized:</p>
+                        <p id="recognizedName" class="result-name">-</p>
+                    </div>
+                </div>
+
+                <!-- Control Buttons -->
+                <div class="control-buttons">
+                    <button id="startCameraBtn" class="btn btn-primary">
+                        Start Camera
+                    </button>
+                    <button id="stopCameraBtn" class="btn btn-danger" disabled>
+                        Stop Camera
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Encode Faces Page -->
+    <section id="encode" class="page">
+        <div class="container">
+            <h2 class="page-title">Encode New Faces</h2>
+            
+            <div class="encode-container">
+                <!-- Upload Section -->
+                <div class="upload-section">
+                    <label for="imageInput" class="upload-label">
+                        <span class="upload-icon">📷</span>
+                        <span>Choose Images</span>
+                        <input type="file" id="imageInput" accept="image/*" multiple class="upload-input">
+                    </label>
+                    <p class="upload-hint">You can select multiple images</p>
+                </div>
+
+                <!-- Name Input -->
+                <div class="input-group">
+                    <label for="personName" class="input-label">Person Name</label>
+                    <input type="text" id="personName" class="input-field" placeholder="Enter person's name">
+                </div>
+
+                <!-- Image Preview -->
+                <div id="imagePreview" class="image-preview"></div>
+
+                <!-- Encode Button -->
+                <button id="encodeBtn" class="btn btn-primary btn-large">
+                    Encode Face
+                </button>
+
+                <!-- Message Area -->
+                <div id="messageArea" class="message-area"></div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
