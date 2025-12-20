@@ -1,0 +1,10 @@
+Flask>=3.0.0
+flask-cors>=4.0.0
+face-recognition>=1.3.0
+opencv-python>=4.8.0
+numpy>=1.24.0
+Pillow>=10.0.0
+# Note: dlib installation on Windows requires Visual C++ Build Tools
+# See README.md for installation instructions
+dlib>=19.24.0
+
